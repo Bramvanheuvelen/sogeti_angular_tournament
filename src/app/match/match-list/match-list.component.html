@@ -1,9 +1,6 @@
 <h2>Match History</h2>
 <ul>
   <li *ngFor="let match of matches">
-    {{ match.date | date }}: {{ match.player1name }}
-    <strong>{{ match.player1score }}</strong>
-    <strong>{{ match.player2score }}</strong>  {{ match.player2name }}
-    <a routerLink="/match/edit/{{match.id}}">Edit</a>
+    <app-match-item [match]="match"></app-match-item>
   </li>
 </ul>
