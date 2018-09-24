@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatchService } from '../match.service';
 
 @Component({
   selector: 'app-match-add',
@@ -9,7 +10,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class MatchAddComponent implements OnInit {
   addMatchForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+              private matchService: MatchService) { }
 
   ngOnInit() {
     this.addMatchForm = this.formBuilder.group({
@@ -21,7 +23,9 @@ export class MatchAddComponent implements OnInit {
   }
 
   onSubmit() {
-
+    this.matchService.add(
+      this.addMatchForm.value
+    );
   }
 
 }

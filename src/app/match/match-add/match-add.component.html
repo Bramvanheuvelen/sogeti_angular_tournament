@@ -21,6 +21,7 @@
   <div *ngIf="!addMatchForm.get('player2score').pristine && addMatchForm.get('player2score').hasError('min')">
     Score is min 0!
   </div>
+  <hr>
   <div>
     <button class="btn btn-danger" type="submit" [disabled]="!addMatchForm.valid">Add</button>
   </div>
