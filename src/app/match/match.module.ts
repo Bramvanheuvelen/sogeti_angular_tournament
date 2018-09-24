@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms'
 
 import { MatchRoutingModule } from './match-routing.module';
 import { MatchAddComponent } from './match-add/match-add.component';
@@ -11,7 +12,8 @@ import { MatchService } from './match.service';
 @NgModule({
   imports: [
     CommonModule,
-    MatchRoutingModule
+    MatchRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     MatchService
