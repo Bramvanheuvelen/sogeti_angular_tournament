@@ -3,11 +3,23 @@
   <div class="player1">
     <input type="text" formControlName="player1name" placeholder="Player 1">
     <input type="number" formControlName="player1score" placeholder="Score">
+    <div *ngIf="!addMatchForm.get('player1name').pristine && addMatchForm.get('player1name').hasError('required')">
+      Player name is required!
+    </div>
+    <div *ngIf="!addMatchForm.get('player1score').pristine && addMatchForm.get('player1score').hasError('min')">
+      Score is min 0!
+    </div>
   </div>
   VS
   <div class="player2">
     <input type="text" formControlName="player2name" placeholder="Player 2">
     <input type="number" formControlName="player2score" placeholder="Score">
+  </div>
+  <div *ngIf="!addMatchForm.get('player2name').pristine && addMatchForm.get('player2name').hasError('required')">
+    Player name is required!
+  </div>
+  <div *ngIf="!addMatchForm.get('player2score').pristine && addMatchForm.get('player2score').hasError('min')">
+    Score is min 0!
   </div>
   <div>
     <button class="btn btn-danger" type="submit" [disabled]="!addMatchForm.valid">Add</button>
